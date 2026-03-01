@@ -1,41 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mahavir Agravat | Graduate Engineer Trainee</title>
 
-<head>    
 <style>
-    .hero {
-        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-bg.jpg') no-repeat center center/cover;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white; 
-    }
-   
-    .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 10px;
-    }
-
-    .hero p {
-        font-size: 1.5rem;
-        font-weight: 300;
-    }
-</style>
-
 
 /* ===== GENERAL ===== */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Segoe UI', sans-serif;
+font-family:'Segoe UI',sans-serif;
 scroll-behavior:smooth;
 }
 
@@ -81,9 +59,7 @@ justify-content:center;
 align-items:center;
 text-align:center;
 background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
-url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
-background-size:cover;
-background-position:center;
+url("hero-bg.jpg") no-repeat center center/cover;
 }
 
 .hero h1{
@@ -145,10 +121,6 @@ max-width:600px;
 margin-bottom:20px;
 }
 
-.skill-name{
-margin-bottom:5px;
-}
-
 .bar{
 background:#333;
 height:8px;
@@ -159,8 +131,6 @@ border-radius:10px;
 height:8px;
 background:gold;
 border-radius:10px;
-width:0;
-transition:1.5s;
 }
 
 /* ===== PROJECTS ===== */
@@ -239,12 +209,8 @@ margin-top:50px;
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
-section{
-padding:80px 20px;
-}
-nav{
-padding:15px 20px;
-}
+section{ padding:80px 20px; }
+nav{ padding:15px 20px; }
 }
 
 </style>
@@ -252,7 +218,7 @@ padding:15px 20px;
 
 <body>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAVBAR -->
 <nav>
 <h2>Mahavir Agravat</h2>
 <ul>
@@ -266,39 +232,41 @@ padding:15px 20px;
 </ul>
 </nav>
 
-<!-- ===== HOME ===== -->
+<!-- HOME -->
 <section class="hero" id="home">
 <h1>Hello, I'm <span>Mahavir Agravat</span></h1>
 <p>Graduate Engineer Trainee</p>
 <a href="#contact" class="btn">Hire Me</a>
 </section>
 
-<!-- ===== ABOUT ===== -->
+<!-- ABOUT -->
 <section class="about" id="about">
 <h2 class="section-title">About Me</h2>
 
 <div class="about-container">
-<img src="https://via.placeholder.com/250" alt="profile">
+<img src="profile.jpg" alt="Profile Photo">
 
 <div class="about-text">
 <p>
-Write your professional summary here. Mention your mechanical engineering experience, cement plant project exposure, software skills like AutoCAD, SolidWorks, SAP, and career goals.
+Mechanical Engineering graduate with experience in cement plant projects,
+mechanical erection, fabrication work, and cost optimization.
+Skilled in AutoCAD, SolidWorks, and project management.
 </p>
 
 <br>
 
 <div class="skill">
-<div class="skill-name">AutoCAD</div>
+<div>AutoCAD</div>
 <div class="bar"><div class="progress" style="width:85%"></div></div>
 </div>
 
 <div class="skill">
-<div class="skill-name">SolidWorks</div>
+<div>SolidWorks</div>
 <div class="bar"><div class="progress" style="width:75%"></div></div>
 </div>
 
 <div class="skill">
-<div class="skill-name">Project Management</div>
+<div>Project Management</div>
 <div class="bar"><div class="progress" style="width:80%"></div></div>
 </div>
 
@@ -306,12 +274,11 @@ Write your professional summary here. Mention your mechanical engineering experi
 </div>
 </section>
 
-<!-- ===== PROJECTS ===== -->
+<!-- PROJECTS -->
 <section id="projects">
 <h2 class="section-title">Projects</h2>
 
 <div class="projects-container">
-
 <div class="project-card">
 <h3>Cement Plant Project</h3>
 <p>Worked in mechanical erection & commissioning activities.</p>
@@ -326,11 +293,10 @@ Write your professional summary here. Mention your mechanical engineering experi
 <h3>Cost Optimization</h3>
 <p>Applied waste reduction & Kaizen methods to reduce cost.</p>
 </div>
-
 </div>
 </section>
 
-<!-- ===== CERTIFICATIONS ===== -->
+<!-- CERTIFICATIONS -->
 <section id="certifications">
 <h2 class="section-title">Certifications</h2>
 <div class="cert-list">
@@ -340,32 +306,31 @@ Write your professional summary here. Mention your mechanical engineering experi
 </div>
 </section>
 
-<!-- ===== PORTFOLIO ===== -->
+<!-- PORTFOLIO -->
 <section id="portfolio">
 <h2 class="section-title">Portfolio</h2>
-
 <div class="portfolio-grid">
-<img src="https://via.placeholder.com/400x300">
-<img src="https://via.placeholder.com/400x300">
-<img src="https://via.placeholder.com/400x300">
-<img src="https://via.placeholder.com/400x300">
+<img src="https://via.placeholder.com/400x300" alt="portfolio">
+<img src="https://via.placeholder.com/400x300" alt="portfolio">
+<img src="https://via.placeholder.com/400x300" alt="portfolio">
+<img src="https://via.placeholder.com/400x300" alt="portfolio">
 </div>
 </section>
 
-<!-- ===== RESUME ===== -->
+<!-- RESUME -->
 <section id="resume" class="resume">
 <h2 class="section-title">Resume</h2>
-<a href="#" class="btn">Download Resume</a>
+<a href="resume.pdf" download class="btn">Download Resume</a>
 </section>
 
-<!-- ===== CONTACT ===== -->
+<!-- CONTACT -->
 <section id="contact" class="contact">
 <h2 class="section-title">Contact Me</h2>
 
 <form>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea rows="5" placeholder="Your Message"></textarea>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message" required></textarea>
 <button type="submit">Send Message</button>
 </form>
 
@@ -375,20 +340,7 @@ Write your professional summary here. Mention your mechanical engineering experi
 <p>© 2026 Mahavir Agravat | All Rights Reserved</p>
 </footer>
 
-<script>
-
-/* Animate skill bars on load */
-window.onload = function(){
-let bars = document.querySelectorAll(".progress");
-bars.forEach(bar=>{
-bar.style.width = bar.getAttribute("style").replace("width:","");
-});
-};
-
-</script>
-
 </body>
-
 </html>
 
 
