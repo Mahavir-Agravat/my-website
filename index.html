@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +7,31 @@
 
 <style>
 
-/* ===== GENERAL ===== */
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* GENERAL */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
 background:#0e0e0e;
 color:white;
+line-height:1.6;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 nav{
 position:fixed;
 width:100%;
-background:black;
-padding:15px 50px;
+background:rgba(0,0,0,0.8);
+backdrop-filter:blur(10px);
+padding:18px 60px;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -37,20 +41,21 @@ z-index:1000;
 nav ul{
 display:flex;
 list-style:none;
-gap:25px;
+gap:30px;
 }
 
 nav a{
 color:white;
 text-decoration:none;
 font-weight:500;
+transition:0.3s;
 }
 
 nav a:hover{
-color:gold;
+color:#ffd700;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -58,159 +63,143 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
-url("hero-bg.jpg") no-repeat center center/cover;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+url("hero-bg.jpg") center/cover no-repeat;
 }
 
 .hero h1{
-font-size:48px;
+font-size:60px;
 margin-bottom:15px;
 }
 
 .hero span{
-color:gold;
+color:#ffd700;
 }
 
 .hero p{
-font-size:20px;
-margin-bottom:20px;
+font-size:22px;
+margin-bottom:30px;
 }
 
+/* BUTTON */
 .btn{
-background:gold;
+background:linear-gradient(45deg,#ffd700,#ffcc00);
 color:black;
-padding:10px 25px;
-border-radius:25px;
+padding:14px 35px;
+border-radius:30px;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
+box-shadow:0 5px 20px rgba(255,215,0,0.4);
+transition:0.3s;
 }
 
-/* ===== SECTION COMMON ===== */
+.btn:hover{
+transform:translateY(-3px);
+}
+
+/* SECTION */
 section{
 padding:100px 80px;
 }
 
 .section-title{
-font-size:35px;
-margin-bottom:40px;
+font-size:40px;
 text-align:center;
-color:gold;
+margin-bottom:60px;
+color:#ffd700;
 }
 
-/* ===== ABOUT ===== */
+/* ABOUT */
 .about-container{
 display:flex;
 flex-wrap:wrap;
-gap:40px;
-align-items:center;
+gap:50px;
 justify-content:center;
+align-items:center;
 }
 
 .about img{
-width:250px;
+width:260px;
 border-radius:50%;
-border:5px solid gold;
+border:6px solid #ffd700;
 }
 
 .about-text{
 max-width:600px;
 }
 
-/* ===== SKILLS ===== */
-.skill{
-margin-bottom:20px;
-}
+/* SKILLS */
+.skill{ margin-bottom:25px; }
 
 .bar{
 background:#333;
-height:8px;
+height:10px;
 border-radius:10px;
 }
 
 .progress{
-height:8px;
-background:gold;
+height:10px;
+background:#ffd700;
 border-radius:10px;
 }
 
-/* ===== PROJECTS ===== */
+/* PROJECTS */
 .projects-container{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .project-card{
 background:#1a1a1a;
-padding:20px;
-border-radius:10px;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
 transition:0.3s;
 }
 
 .project-card:hover{
-transform:translateY(-5px);
-background:#222;
+transform:translateY(-10px);
 }
 
-/* ===== CERTIFICATIONS ===== */
-.cert-list{
-text-align:center;
-line-height:35px;
-}
-
-/* ===== PORTFOLIO ===== */
-.portfolio-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-}
-
-.portfolio-grid img{
-width:100%;
-border-radius:8px;
-}
-
-/* ===== RESUME ===== */
-.resume{
-text-align:center;
-}
-
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact form{
 max-width:500px;
 margin:auto;
 display:flex;
 flex-direction:column;
-gap:15px;
+gap:20px;
 }
 
 .contact input,
 .contact textarea{
-padding:10px;
+padding:14px;
+border-radius:6px;
 border:none;
-border-radius:5px;
 }
 
 .contact button{
-padding:10px;
-background:gold;
+background:#ffd700;
+padding:12px;
 border:none;
-border-radius:20px;
-font-weight:bold;
+border-radius:30px;
+font-weight:600;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
 text-align:center;
-padding:20px;
+padding:25px;
 background:black;
-margin-top:50px;
 }
 
-/* ===== RESPONSIVE ===== */
+/* MOBILE */
 @media(max-width:768px){
-section{ padding:80px 20px; }
-nav{ padding:15px 20px; }
+.hero h1{font-size:38px;}
+section{padding:80px 25px;}
+nav{padding:15px 20px;}
 }
 
 </style>
@@ -225,9 +214,6 @@ nav{ padding:15px 20px; }
 <li><a href="#home">Home</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#certifications">Certifications</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#resume">Resume</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -244,7 +230,7 @@ nav{ padding:15px 20px; }
 <h2 class="section-title">About Me</h2>
 
 <div class="about-container">
-<img src="profile.jpg" alt="Profile Photo">
+<img src="profile.jpg" alt="profile">
 
 <div class="about-text">
 <p>
@@ -291,36 +277,9 @@ Skilled in AutoCAD, SolidWorks, and project management.
 
 <div class="project-card">
 <h3>Cost Optimization</h3>
-<p>Applied waste reduction & Kaizen methods to reduce cost.</p>
+<p>Applied waste reduction & Kaizen methods.</p>
 </div>
 </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-<h2 class="section-title">Certifications</h2>
-<div class="cert-list">
-<p>✔ Project Management Professional</p>
-<p>✔ AutoCAD Foundation</p>
-<p>✔ Professional Quality Engineer</p>
-</div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="portfolio">
-<h2 class="section-title">Portfolio</h2>
-<div class="portfolio-grid">
-<img src="https://via.placeholder.com/400x300" alt="portfolio">
-<img src="https://via.placeholder.com/400x300" alt="portfolio">
-<img src="https://via.placeholder.com/400x300" alt="portfolio">
-<img src="https://via.placeholder.com/400x300" alt="portfolio">
-</div>
-</section>
-
-<!-- RESUME -->
-<section id="resume" class="resume">
-<h2 class="section-title">Resume</h2>
-<a href="resume.pdf" download class="btn">Download Resume</a>
 </section>
 
 <!-- CONTACT -->
@@ -333,7 +292,6 @@ Skilled in AutoCAD, SolidWorks, and project management.
 <textarea rows="5" placeholder="Your Message" required></textarea>
 <button type="submit">Send Message</button>
 </form>
-
 </section>
 
 <footer>
@@ -342,6 +300,7 @@ Skilled in AutoCAD, SolidWorks, and project management.
 
 </body>
 </html>
+
 
 
 
