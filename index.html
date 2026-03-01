@@ -1,230 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mahavir Agravat Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahavir Agravat | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f9b233;
+            --bg: #000000;
+            --card-bg: #0a0a0a;
+            --text-main: #ffffff;
+            --text-dim: #aaaaaa;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
+        body {
+            background: var(--bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
 
-body{
-background:black;
-color:white;
-}
+        /* --- NAVBAR --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
 
-/* NAVBAR */
+        .logo { font-size: 24px; font-weight: 700; color: var(--text-main); }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: var(--text-main); text-decoration: none; font-size: 14px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .menu-btn { display: none; font-size: 26px; cursor: pointer; color: var(--primary); }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-position:fixed;
-width:100%;
-top:0;
-background:black;
-z-index:1000;
-}
+        /* --- HERO SECTION (EXPECTATION STYLE) --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 8% 50px;
+            position: relative;
+        }
 
-.logo{
-font-size:24px;
-font-weight:700;
-}
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            position: relative;
+        }
 
-.nav-links{
-display:flex;
-gap:30px;
-}
+        .hero-text { flex: 1; z-index: 3; }
+        .hero-text span.greet { color: var(--primary); letter-spacing: 4px; font-weight: 600; font-size: 14px; }
+        .hero-text h1 { font-size: 70px; line-height: 1.1; margin: 10px 0; font-weight: 800; }
+        .hero-text h1 span { color: var(--primary); display: block; }
+        .hero-text p { color: var(--text-dim); margin-bottom: 30px; font-size: 20px; }
 
-.nav-links a{
-color:white;
-text-decoration:none;
-}
+        .hero-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
 
-.menu-btn{
-display:none;
-font-size:26px;
-cursor:pointer;
-}
+        /* Glow effect behind image */
+        .hero-img::before {
+            content: '';
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(249,178,51,0.1) 0%, rgba(0,0,0,0) 70%);
+            z-index: 1;
+        }
 
-/* HERO SECTION */
+        .hero-img img {
+            width: 100%;
+            max-width: 500px;
+            z-index: 2;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.8));
+        }
 
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:80px 8% 50px; /* top space kam kiya */
-gap:40px;
-}
+        .btn {
+            background: var(--primary);
+            color: black;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            display: inline-block;
+        }
 
-.hero-text{
-max-width:500px;
-}
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(249, 178, 51, 0.3); }
 
-.hero-text span{
-color:#f9b233;
-letter-spacing:2px;
-}
+        /* --- ABOUT & SKILLS SECTION --- */
+        .about {
+            padding: 100px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            background: var(--card-bg);
+        }
 
-.hero-text h1{
-font-size:60px;
-margin:10px 0;
-}
+        .about-info h2 { font-size: 45px; margin-bottom: 20px; }
+        .about-info h2 span { color: var(--primary); }
+        .about-info p { color: var(--text-dim); margin-bottom: 20px; line-height: 1.8; }
 
-.hero-text h1 span{
-color:#f9b233;
-}
+        .skills-container { margin-top: 30px; }
+        .skill-box { margin-bottom: 20px; }
+        .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; }
+        .skill-bar { height: 8px; background: #222; border-radius: 10px; position: relative; }
+        .skill-per {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            box-shadow: 0 0 10px var(--primary);
+        }
 
-.hero-text p{
-color:#ccc;
-margin:20px 0;
-font-size:18px;
-}
-
-.hero-img{
-flex:1;
-display:flex;
-justify-content:center;
-}
-
-.hero-img img{
-width:100%;
-max-width:420px;
-border-radius:20px;
-}
-
-.btn{
-background:#f9b233;
-color:black;
-padding:12px 30px;
-border-radius:30px;
-display:inline-block;
-text-decoration:none;
-font-weight:600;
-}
-
-.hero-img img{
-width:420px;
-border-radius:15px;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-padding-top:120px;
-}
-
-.hero-text h1{
-font-size:40px;
-}
-
-.hero-img img{
-width:90%;
-max-width:300px;
-margin-top:20px;
-}
-
-/* mobile menu */
-
-.nav-links{
-position:absolute;
-top:70px;
-right:0;
-background:black;
-flex-direction:column;
-width:200px;
-padding:20px;
-display:none;
-}
-
-.nav-links.show{
-display:flex;
-}
-
-.menu-btn{
-display:block;
-}
-
-}
-
-}
-</style>
+        /* --- MOBILE --- */
+        @media(max-width: 992px) {
+            .hero-container { flex-direction: column-reverse; text-align: center; padding-top: 50px; }
+            .hero-text h1 { font-size: 45px; }
+            .hero-text h1 span { font-size: 50px; }
+            .about { grid-template-columns: 1fr; text-align: center; }
+            .nav-links {
+                position: fixed; top: 80px; right: -100%; background: var(--bg);
+                flex-direction: column; width: 100%; height: 100vh; padding: 50px; transition: 0.4s;
+            }
+            .nav-links.show { right: 0; }
+            .menu-btn { display: block; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav>
-<div class="logo">Mahavir Agravat</div>
+    <nav>
+        <div class="logo">Mahavir.</div>
+        <ul class="nav-links" id="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </nav>
 
-<div class="nav-links" id="menu">
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Projects</a>
-<a href="#">Certifications</a>
-<a href="#">Resume</a>
-<a href="#">Portfolio</a>
-<a href="#">Contact</a>
-</div>
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-text">
+                <span class="greet">HELLO!</span>
+                <h1>I'm <span>Mahavir Agravat</span></h1>
+                <p>Graduate Engineer Trainee</p>
+                <a href="mailto:mahavir@example.com" class="btn">Hire Me</a>
+            </div>
+            <div class="hero-img">
+                <img src="profile.png" alt="Mahavir Agravat">
+            </div>
+        </div>
+    </section>
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-</nav>
+    <section class="about" id="about">
+        <div class="about-info">
+            <h2>About <span>Me</span></h2>
+            <p>Mechanical Engineer with experience in pre-project activities for cement grinding units. Currently focused on plant operations and technical upskilling.</p>
+            <p>Targeting GATE 2027 to specialize in Mechanical Design at top Indian institutes.</p>
+            <a href="#" class="btn">Download CV</a>
+        </div>
 
-<!-- HERO SECTION -->
-<section class="hero">
+        <div class="skills-container">
+            <div class="skill-box">
+                <div class="skill-info"><span>AutoCAD</span><span>85%</span></div>
+                <div class="skill-bar"><div class="skill-per" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-info"><span>SAP (PM Module)</span><span>70%</span></div>
+                <div class="skill-bar"><div class="skill-per" style="width: 70%;"></div></div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-info"><span>Microsoft Power BI</span><span>80%</span></div>
+                <div class="skill-bar"><div class="skill-per" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-info"><span>MS Office</span><span>90%</span></div>
+                <div class="skill-bar"><div class="skill-per" style="width: 90%;"></div></div>
+            </div>
+        </div>
+    </section>
 
-<div class="hero-text">
-<span>HELLO!</span>
-<h1>I'm <span>Mahavir Agravat</span></h1>
-<p>Graduate Engineer Trainee</p>
-<a href="#" class="btn">Hire Me</a>
-</div>
-
-<div class="hero-img">
-<img src="profile.jpg" alt="Mahavir">
-</div>
-
-</section>
-
-<script>
-function toggleMenu(){
-document.getElementById("menu").classList.toggle("show");
-}
-</script>
-
+    <script>
+        function toggleMenu(){
+            document.getElementById("menu").classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
