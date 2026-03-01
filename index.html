@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Portfolio</title>
+
+<style>
+
+/* ===== GENERAL ===== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0e0e0e;
+color:white;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+position:fixed;
+width:100%;
+background:black;
+padding:15px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+nav a:hover{
+color:gold;
+}
+
+/* ===== HERO ===== */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
+url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.hero span{
+color:gold;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:20px;
+}
+
+.btn{
+background:gold;
+color:black;
+padding:10px 25px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* ===== SECTION COMMON ===== */
+section{
+padding:100px 80px;
+}
+
+.section-title{
+font-size:35px;
+margin-bottom:40px;
+text-align:center;
+color:gold;
+}
+
+/* ===== ABOUT ===== */
+.about-container{
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+align-items:center;
+justify-content:center;
+}
+
+.about img{
+width:250px;
+border-radius:50%;
+border:5px solid gold;
+}
+
+.about-text{
+max-width:600px;
+}
+
+/* ===== SKILLS ===== */
+.skill{
+margin-bottom:20px;
+}
+
+.skill-name{
+margin-bottom:5px;
+}
+
+.bar{
+background:#333;
+height:8px;
+border-radius:10px;
+}
+
+.progress{
+height:8px;
+background:gold;
+border-radius:10px;
+width:0;
+transition:1.5s;
+}
+
+/* ===== PROJECTS ===== */
+.projects-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.project-card{
+background:#1a1a1a;
+padding:20px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-5px);
+background:#222;
+}
+
+/* ===== CERTIFICATIONS ===== */
+.cert-list{
+text-align:center;
+line-height:35px;
+}
+
+/* ===== PORTFOLIO ===== */
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.portfolio-grid img{
+width:100%;
+border-radius:8px;
+}
+
+/* ===== RESUME ===== */
+.resume{
+text-align:center;
+}
+
+/* ===== CONTACT ===== */
+.contact form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact input,
+.contact textarea{
+padding:10px;
+border:none;
+border-radius:5px;
+}
+
+.contact button{
+padding:10px;
+background:gold;
+border:none;
+border-radius:20px;
+font-weight:bold;
+}
+
+/* ===== FOOTER ===== */
+footer{
+text-align:center;
+padding:20px;
+background:black;
+margin-top:50px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+section{
+padding:80px 20px;
+}
+nav{
+padding:15px 20px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav>
+<h2>YourName</h2>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- ===== HOME ===== -->
+<section class="hero" id="home">
+<h1>Hello, I'm <span>Your Name</span></h1>
+<p>Mechanical Engineer | Design Enthusiast | Project Engineer</p>
+<a href="#contact" class="btn">Hire Me</a>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+<h2 class="section-title">About Me</h2>
+
+<div class="about-container">
+<img src="https://via.placeholder.com/250" alt="profile">
+
+<div class="about-text">
+<p>
+Write your professional summary here. Mention your mechanical engineering experience, cement plant project exposure, software skills like AutoCAD, SolidWorks, SAP, and career goals.
+</p>
+
+<br>
+
+<div class="skill">
+<div class="skill-name">AutoCAD</div>
+<div class="bar"><div class="progress" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">SolidWorks</div>
+<div class="bar"><div class="progress" style="width:75%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Project Management</div>
+<div class="bar"><div class="progress" style="width:80%"></div></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+<h2 class="section-title">Projects</h2>
+
+<div class="projects-container">
+
+<div class="project-card">
+<h3>Cement Plant Project</h3>
+<p>Worked in mechanical erection & commissioning activities.</p>
+</div>
+
+<div class="project-card">
+<h3>Fabrication Work</h3>
+<p>Managed workshop fabrication and maintenance operations.</p>
+</div>
+
+<div class="project-card">
+<h3>Cost Optimization</h3>
+<p>Applied waste reduction & Kaizen methods to reduce cost.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ===== CERTIFICATIONS ===== -->
+<section id="certifications">
+<h2 class="section-title">Certifications</h2>
+<div class="cert-list">
+<p>✔ Project Management Professional</p>
+<p>✔ AutoCAD Foundation</p>
+<p>✔ Professional Quality Engineer</p>
+</div>
+</section>
+
+<!-- ===== PORTFOLIO ===== -->
+<section id="portfolio">
+<h2 class="section-title">Portfolio</h2>
+
+<div class="portfolio-grid">
+<img src="https://via.placeholder.com/400x300">
+<img src="https://via.placeholder.com/400x300">
+<img src="https://via.placeholder.com/400x300">
+<img src="https://via.placeholder.com/400x300">
+</div>
+</section>
+
+<!-- ===== RESUME ===== -->
+<section id="resume" class="resume">
+<h2 class="section-title">Resume</h2>
+<a href="#" class="btn">Download Resume</a>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact">
+<h2 class="section-title">Contact Me</h2>
+
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+</section>
+
+<footer>
+<p>© 2026 Your Name | All Rights Reserved</p>
+</footer>
+
+<script>
+
+/* Animate skill bars on load */
+window.onload = function(){
+let bars = document.querySelectorAll(".progress");
+bars.forEach(bar=>{
+bar.style.width = bar.getAttribute("style").replace("width:","");
+});
+};
+
+</script>
+
+</body>
+</html>
