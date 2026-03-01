@@ -5,135 +5,139 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mahavir Agravat Portfolio</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-
-/* GOOGLE FONT */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Poppins,sans-serif;
 }
 
 body{
-background:#000;
-color:#fff;
+background:black;
+color:white;
 }
 
 /* NAVBAR */
+
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 80px;
+padding:20px 8%;
 position:fixed;
 width:100%;
+top:0;
 background:black;
 z-index:1000;
 }
 
 .logo{
 font-size:24px;
-font-weight:600;
+font-weight:700;
 }
 
-nav ul{
+.nav-links{
 display:flex;
 gap:30px;
-list-style:none;
 }
 
-nav a{
+.nav-links a{
 color:white;
 text-decoration:none;
-transition:0.3s;
 }
 
-nav a:hover{
-color:#f7b733;
+.menu-btn{
+display:none;
+font-size:26px;
+cursor:pointer;
 }
 
 /* HERO SECTION */
+
 .hero{
+min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:space-between;
-min-height:100vh;
-padding:0 80px;
+padding:120px 8% 50px;
 }
 
-/* LEFT TEXT */
 .hero-text{
-max-width:600px;
+max-width:500px;
 }
 
-.hero-text small{
-color:#f7b733;
+.hero-text span{
+color:#f9b233;
 letter-spacing:2px;
 }
 
 .hero-text h1{
-font-size:70px;
-margin:15px 0;
+font-size:60px;
+margin:10px 0;
 }
 
-.hero-text span{
-color:#f7b733;
+.hero-text h1 span{
+color:#f9b233;
 }
 
 .hero-text p{
-font-size:22px;
-margin:20px 0;
 color:#ccc;
+margin:20px 0;
+font-size:18px;
 }
 
-/* BUTTON */
 .btn{
-display:inline-block;
-background:#f7b733;
+background:#f9b233;
 color:black;
 padding:12px 30px;
 border-radius:30px;
+display:inline-block;
 text-decoration:none;
 font-weight:600;
 }
 
-/* RIGHT IMAGE */
 .hero-img img{
 width:420px;
 border-radius:15px;
-box-shadow:0 20px 40px rgba(0,0,0,0.6);
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE */
+
 @media(max-width:900px){
 
 .hero{
 flex-direction:column;
 text-align:center;
-padding-top:120px;
-}
-
-.hero-text h1{
-font-size:40px;
 }
 
 .hero-img img{
-width:260px;
+width:280px;
 margin-top:40px;
 }
 
-nav{
+.nav-links{
+position:absolute;
+top:70px;
+right:0;
+background:black;
+flex-direction:column;
+width:200px;
 padding:20px;
-}
-
-nav ul{
 display:none;
 }
+
+.nav-links.show{
+display:flex;
 }
 
+.menu-btn{
+display:block;
+}
+
+}
 </style>
 </head>
 
@@ -143,33 +147,44 @@ display:none;
 <nav>
 <div class="logo">Mahavir Agravat</div>
 
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Resume</a></li>
-<li><a href="#">Projects</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
+<div class="nav-links" id="menu">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Projects</a>
+<a href="#">Certifications</a>
+<a href="#">Resume</a>
+<a href="#">Portfolio</a>
+<a href="#">Contact</a>
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section class="hero">
 
 <div class="hero-text">
-<small>HELLO!</small>
+<span>HELLO!</span>
 <h1>I'm <span>Mahavir Agravat</span></h1>
 <p>Graduate Engineer Trainee</p>
 <a href="#" class="btn">Hire Me</a>
 </div>
 
 <div class="hero-img">
-<img src="profile.jpg" alt="Mahavir Agravat">
+<img src="profile.jpg" alt="Mahavir">
 </div>
 
 </section>
 
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
+
 
 
 
