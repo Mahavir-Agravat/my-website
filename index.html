@@ -45,7 +45,7 @@
 
         .logo { font-size: 24px; font-weight: 700; }
         .nav-links { display: flex; gap: 30px; list-style: none; }
-        .nav-links a { color: var(--text-main); text-decoration: none; font-size: 14px; transition: 0.3s; font-weight: 400; }
+        .nav-links a { color: var(--text-main); text-decoration: none; font-size: 14px; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
         .menu-btn { display: none; font-size: 26px; cursor: pointer; color: var(--primary); }
 
@@ -80,13 +80,13 @@
             position: relative;
         }
 
-        /* Glow behind image to match "Expectation" */
+        /* Glow effect behind image */
         .hero-img::before {
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(249,178,51,0.15) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(249,178,51,0.2) 0%, rgba(0,0,0,0) 70%);
             z-index: 1;
             top: 50%;
             left: 50%;
@@ -95,9 +95,14 @@
 
         .hero-img img {
             width: 100%;
-            max-width: 450px;
+            max-width: 480px;
             z-index: 2;
             filter: drop-shadow(0 10px 50px rgba(0,0,0,0.5));
+            transition: 0.5s ease;
+        }
+
+        .hero-img img:hover {
+            transform: scale(1.02);
         }
 
         .btn {
@@ -124,35 +129,21 @@
 
         .about-info h2 { font-size: 45px; margin-bottom: 25px; font-weight: 700; }
         .about-info h2 span { color: var(--primary); }
-        .about-info p { color: var(--text-dim); margin-bottom: 20px; line-height: 1.8; font-size: 16px; }
+        .about-info p { color: var(--text-dim); margin-bottom: 20px; line-height: 1.8; }
 
         .skills-container { margin-top: 10px; }
         .skill-box { margin-bottom: 25px; }
-        .skill-info { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .skill-info { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 600; font-size: 14px; text-transform: uppercase; }
         .skill-bar { height: 6px; background: #1a1a1a; border-radius: 10px; position: relative; overflow: hidden; }
-        .skill-per {
-            height: 100%;
-            background: var(--primary);
-            border-radius: 10px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            box-shadow: 0 0 15px rgba(249, 178, 51, 0.5);
-        }
+        .skill-per { height: 100%; background: var(--primary); border-radius: 10px; position: absolute; left: 0; top: 0; box-shadow: 0 0 15px rgba(249, 178, 51, 0.5); }
 
-        /* --- MOBILE --- */
+        /* --- MOBILE RESPONSIVENESS --- */
         @media(max-width: 992px) {
-            nav { padding: 15px 5%; }
-            .hero-container { flex-direction: column; text-align: center; padding-top: 60px; }
+            .hero-container { flex-direction: column; text-align: center; }
             .hero-text h1 { font-size: 50px; }
             .hero-img img { max-width: 320px; margin-top: 40px; }
             .about { grid-template-columns: 1fr; gap: 50px; text-align: center; }
-            .nav-links {
-                position: fixed; top: 75px; right: -100%; background: var(--bg);
-                flex-direction: column; width: 100%; height: 100vh; padding: 60px; transition: 0.5s;
-            }
-            .nav-links.show { right: 0; }
-            .menu-btn { display: block; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -160,14 +151,13 @@
 
     <nav>
         <div class="logo">Mahavir.</div>
-        <ul class="nav-links" id="menu">
-            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="#resume" onclick="toggleMenu()">Resume</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="menu-btn" onclick="toggleMenu()">☰</div>
     </nav>
 
     <section class="hero" id="home">
@@ -179,7 +169,7 @@
                 <a href="#contact" class="btn">Hire Me</a>
             </div>
             <div class="hero-img">
-                <img src="profile.png" alt="Mahavir Agravat">
+                <img src="Profile.jpg" alt="Mahavir Agravat">
             </div>
         </div>
     </section>
@@ -187,9 +177,8 @@
     <section class="about" id="about">
         <div class="about-info">
             <h2>About <span>Me</span></h2>
-            <p>I am a Mechanical Engineer (Class of 2024) currently working as a Graduate Engineer Trainee at Adani Infra India Limited.</p> 
-            <p>I specialize in pre-project activities for cement grinding units and have hands-on experience from an 8-month apprenticeship at Sumitomo Chemical India Ltd. My professional goal is to pursue an M.Tech in Mechanical Design at a top IIT.</p>
-            <a href="#" class="btn" style="padding: 12px 30px; font-size: 14px;">Download CV</a>
+            <p>I am a Mechanical Engineer working as a Graduate Engineer Trainee at Adani Infra India Limited. I specialize in pre-project activities for cement grinding units.</p> 
+            <p>Previously, I completed an 8-month apprenticeship at Sumitomo Chemical India Ltd. My focus is on mechanical design and I am currently preparing for GATE 2027.</p>
         </div>
 
         <div class="skills-container">
@@ -198,11 +187,11 @@
                 <div class="skill-bar"><div class="skill-per" style="width: 85%;"></div></div>
             </div>
             <div class="skill-box">
-                <div class="skill-info"><span>SAP (PM Module)</span><span>75%</span></div>
+                <div class="skill-info"><span>SAP</span><span>75%</span></div>
                 <div class="skill-bar"><div class="skill-per" style="width: 75%;"></div></div>
             </div>
             <div class="skill-box">
-                <div class="skill-info"><span>Microsoft Power BI</span><span>80%</span></div>
+                <div class="skill-info"><span>Power BI</span><span>80%</span></div>
                 <div class="skill-bar"><div class="skill-per" style="width: 80%;"></div></div>
             </div>
             <div class="skill-box">
@@ -212,10 +201,5 @@
         </div>
     </section>
 
-    <script>
-        function toggleMenu(){
-            document.getElementById("menu").classList.toggle("show");
-        }
-    </script>
 </body>
 </html>
