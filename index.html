@@ -62,7 +62,8 @@ min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:120px 8% 50px;
+padding:80px 8% 50px; /* top space kam kiya */
+gap:40px;
 }
 
 .hero-text{
@@ -89,6 +90,18 @@ margin:20px 0;
 font-size:18px;
 }
 
+.hero-img{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.hero-img img{
+width:100%;
+max-width:420px;
+border-radius:20px;
+}
+
 .btn{
 background:#f9b233;
 color:black;
@@ -111,12 +124,20 @@ border-radius:15px;
 .hero{
 flex-direction:column;
 text-align:center;
+padding-top:120px;
+}
+
+.hero-text h1{
+font-size:40px;
 }
 
 .hero-img img{
-width:280px;
-margin-top:40px;
+width:90%;
+max-width:300px;
+margin-top:20px;
 }
+
+/* mobile menu */
 
 .nav-links{
 position:absolute;
@@ -135,6 +156,8 @@ display:flex;
 
 .menu-btn{
 display:block;
+}
+
 }
 
 }
@@ -184,6 +207,7 @@ document.getElementById("menu").classList.toggle("show");
 
 </body>
 </html>
+
 
 
 
