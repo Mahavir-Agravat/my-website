@@ -66,7 +66,7 @@
             align-items: center;
             justify-content: center;
             padding: 120px 8% 50px;
-            background-color: #000000; /* Pure black */
+            background-color: #000000;
         }
 
         .hero-container {
@@ -100,7 +100,6 @@
             position: relative;
         }
 
-        /* Reference image halo effect */
         .hero-img::after {
             content: '';
             position: absolute;
@@ -115,10 +114,10 @@
 
         .hero-img img {
             width: auto;
-            max-height: 80vh; /* Image height logic */
+            max-height: 80vh;
             max-width: 100%;
             z-index: 2;
-            filter: drop-shadow(0 0 30px rgba(249, 178, 51, 0.1)); /* Soft halo */
+            filter: drop-shadow(0 0 30px rgba(249, 178, 51, 0.1));
         }
 
         /* --- ABOUT SECTION --- */
@@ -140,27 +139,27 @@
         .skill-bar { height: 4px; background: #1a1a1a; border-radius: 10px; position: relative; overflow: hidden; }
         .skill-per { height: 100%; background: var(--primary); border-radius: 10px; position: absolute; left: 0; top: 0; }
 
-        /* --- MOBILE RESPONSIVENESS (Reference image exact fit) --- */
+        /* --- MOBILE RESPONSIVENESS --- */
         @media(max-width: 992px) {
             nav { padding: 15px 5%; }
-            .nav-links { display: none; } /* Original menu hide */
-            .menu-toggle { display: block; } /* Show menu button */
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
             
             .hero { padding: 100px 5% 50px; }
             .hero-container { 
-                flex-direction: column; /* Stack */
+                flex-direction: column;
                 text-align: center; 
             }
 
             .hero-img { 
-                order: -1; /* Image text se upar lane ke liye */
+                order: -1;
                 justify-content: center;
                 margin-bottom: 30px;
                 width: 100%;
             }
 
             .hero-img img { 
-                max-width: 280px; /* Mobile photo compact size */
+                max-width: 280px;
                 max-height: auto;
             }
 
@@ -168,7 +167,6 @@
             .hero-text h3 { font-size: 18px; }
             .social-btns { justify-content: center; flex-wrap: wrap; }
             
-            /* Mobile side menu animation */
             .nav-links.active {
                 display: flex; flex-direction: column; position: absolute; top: 70px; left: 0;
                 width: 100%; background: rgba(0,0,0,0.98); padding: 30px; border-bottom: 2px solid var(--primary);
@@ -219,7 +217,7 @@
                 </div>
             </div>
             <div class="hero-img">
-                <img src="Mahavir_FullBody.png" alt="Mahavir Agravat">
+                <img src="Profile.jpg" alt="Mahavir Agravat">
             </div>
         </div>
     </section>
@@ -228,7 +226,7 @@
         <div class="about-info">
             <h2>About <span>Me</span></h2>
             <p>I am a Mechanical Engineer working as a Graduate Engineer Trainee at Adani Infra India Limited. I specialize in pre-project activities for cement grinding units, focusing on mechanical design and project coordination.</p>
-            <p>I completed an 8-month apprenticeship at Sumitomo Chemical India Ltd, gaining hands-on experience in mechanical maintenance. Currently preparing for GATE 2027 to further my education and expertise.</p>
+            <p>I completed an 8-month apprenticeship at Sumitomo Chemical India Ltd in Bhavnagar, gaining hands-on experience in the mechanical workshop. Currently preparing for GATE 2027 to further my education and expertise in Mechanical Design.</p>
         </div>
 
         <div class="skills-container">
