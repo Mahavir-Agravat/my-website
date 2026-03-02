@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahavir Agravat | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -37,16 +38,26 @@
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .logo { font-size: 24px; font-weight: 700; }
+        .logo { font-size: 24px; font-weight: 700; color: var(--primary); text-decoration: none; }
+        
+        /* Desktop Links */
         .nav-links { display: flex; gap: 30px; list-style: none; }
-        .nav-links a { color: var(--text-main); text-decoration: none; font-size: 14px; transition: 0.3s; }
+        .nav-links a { color: var(--text-main); text-decoration: none; font-size: 14px; transition: 0.3s; font-weight: 500; }
         .nav-links a:hover { color: var(--primary); }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            color: var(--primary);
+            font-size: 24px;
+        }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -55,7 +66,7 @@
             align-items: center;
             justify-content: center;
             padding: 120px 8% 50px;
-            position: relative;
+            background-color: #000000; /* Reference image jaisa pure black */
         }
 
         .hero-container {
@@ -66,12 +77,21 @@
             max-width: 1200px;
         }
 
-        .hero-text { flex: 1; z-index: 3; }
+        .hero-text { flex: 1.2; }
         .hero-text span.greet { color: var(--primary); letter-spacing: 4px; font-weight: 600; font-size: 14px; display: block; margin-bottom: 15px; }
-        .hero-text h1 { font-size: clamp(40px, 5vw, 70px); line-height: 1.1; margin: 0; font-weight: 800; }
+        .hero-text h1 { font-size: clamp(40px, 5vw, 70px); line-height: 1.1; font-weight: 800; color: #ffffff; }
         .hero-text h1 span { color: var(--primary); }
-        .hero-text h3 { font-size: 24px; font-weight: 600; margin-top: 15px; }
-        .hero-text p { color: var(--text-dim); margin: 10px 0 35px; font-size: 18px; font-weight: 300; }
+        .hero-text h3 { font-size: 22px; margin-top: 15px; color: #fff; font-weight: 500; }
+        
+        /* Social Buttons */
+        .social-btns { display: flex; gap: 15px; margin-top: 30px; }
+        .social-btns .btn {
+            padding: 12px 30px; border-radius: 50px; text-decoration: none;
+            font-weight: 700; display: flex; align-items: center; gap: 10px; transition: 0.3s;
+        }
+        .btn.primary { background: var(--primary); color: #000; }
+        .btn.outline { border: 2px solid var(--primary); color: var(--primary); }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(249, 178, 51, 0.3); }
 
         .hero-img {
             flex: 1;
@@ -80,30 +100,32 @@
             position: relative;
         }
 
+        /* Soft yellow halo/glow light effect (reference image se inspired) */
+        .hero-img::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(249, 178, 51, 0.15) 0%, rgba(0,0,0,0) 70%);
+            z-index: 1;
+        }
+
         .hero-img img {
-            width: 100%;
-            max-width: 450px;
+            width: auto;
+            max-height: 80vh; /* Image height ko fix karne ke liye */
+            max-width: 100%;
             z-index: 2;
-            filter: drop-shadow(0 10px 50px rgba(0,0,0,0.5));
-            transition: 0.5s ease;
+            filter: drop-shadow(0 0 30px rgba(249, 178, 51, 0.1)); /* Soft edges halo effect */
         }
 
-        .btn {
-            background: var(--primary);
-            color: black;
-            padding: 14px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.3s ease;
-            display: inline-block;
-        }
-
-        /* --- ABOUT & SKILLS SECTION --- */
+        /* --- ABOUT SECTION --- */
         .about {
             padding: 100px 8%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            align-items: center;
             gap: 80px;
             background: var(--card-bg);
         }
@@ -112,41 +134,52 @@
         .about-info h2 span { color: var(--primary); }
         .about-info p { color: var(--text-dim); margin-bottom: 20px; line-height: 1.8; }
 
-        .skills-container { margin-top: 10px; }
+        .skills-container { flex: 1; margin-top: 10px; }
         .skill-box { margin-bottom: 25px; }
         .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; font-size: 13px; text-transform: uppercase; }
         .skill-bar { height: 4px; background: #1a1a1a; border-radius: 10px; position: relative; overflow: hidden; }
         .skill-per { height: 100%; background: var(--primary); border-radius: 10px; position: absolute; left: 0; top: 0; }
 
-        /* --- MOBILE RESPONSIVENESS (Main Fixes) --- */
+        /* --- MOBILE RESPONSIVENESS (Reference image jaisa stacked layout) --- */
         @media(max-width: 992px) {
             nav { padding: 15px 5%; }
-            .nav-links { display: none; } /* Mobile menu can be added later */
+            .nav-links { display: none; } /* Original menu hide */
+            .menu-toggle { display: block; } /* Show menu button */
             
-            .hero { padding-top: 100px; }
+            .hero { padding: 100px 5% 50px; }
             .hero-container { 
-                flex-direction: column; /* Stack vertically on mobile */
+                flex-direction: column; /* Stack vertically */
                 text-align: center; 
             }
 
             .hero-img { 
-                order: -1; /* Image ko text se upar lane ke liye */
+                order: -1; /* Image text se upar lane ke liye */
                 justify-content: center;
                 margin-bottom: 30px;
                 width: 100%;
             }
 
             .hero-img img { 
-                max-width: 280px; /* Mobile par image thodi choti */
+                max-width: 280px; /* Mobile par image size compact */
+                max-height: auto;
             }
 
             .hero-text h1 { font-size: 36px; }
-            .hero-text p { font-size: 16px; margin-bottom: 25px; }
+            .hero-text h3 { font-size: 18px; }
+            .social-btns { justify-content: center; flex-wrap: wrap; }
+            
+            /* Mobile side menu animation */
+            .nav-links.active {
+                display: flex; flex-direction: column; position: absolute; top: 70px; left: 0;
+                width: 100%; background: rgba(0,0,0,0.98); padding: 30px; border-bottom: 2px solid var(--primary);
+                text-align: center;
+            }
 
             .about { 
-                grid-template-columns: 1fr; 
+                flex-direction: column;
+                gap: 50px;
                 padding: 60px 8%; 
-                text-align: left; /* Text alignment left hi rakha hai for professional look */
+                text-align: left; 
             }
         }
     </style>
@@ -154,13 +187,18 @@
 <body>
 
     <nav>
-        <div class="logo">Mahavir.</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <a href="#home" class="logo">Mahavir.</a>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About Me</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#resume" onclick="toggleMenu()">Resume</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
     </nav>
 
@@ -170,11 +208,18 @@
                 <span class="greet">HELLO!</span>
                 <h1>I'm <span>Mahavir <br>Agravat</span></h1>
                 <h3>Graduate Engineer Trainee</h3>
-                <p>Mechanical Engineer | Adani Infra India Limited</p>
-                <a href="https://github.com" class="btn">GITHUB</a>
+                
+                <div class="social-btns">
+                    <a href="https://github.com/Mahavir-Agravat" target="_blank" class="btn primary">
+                        <i class="fab fa-github"></i> GITHUB
+                    </a>
+                    <a href="https://linkedin.com/in/mahavir-agravat" target="_blank" class="btn outline">
+                        <i class="fab fa-linkedin"></i> LINKEDIN
+                    </a>
+                </div>
             </div>
             <div class="hero-img">
-                <img src="Profile.jpg" alt="Mahavir Agravat">
+                <img src="Mahavir_FullBody.png" alt="Mahavir Agravat">
             </div>
         </div>
     </section>
@@ -182,29 +227,5 @@
     <section class="about" id="about">
         <div class="about-info">
             <h2>About <span>Me</span></h2>
-            <p>I am a Mechanical Engineer working as a Graduate Engineer Trainee at Adani Infra India Limited. Currently focusing on pre-project activities for cement grinding unit projects.</p> 
-            <p>With a strong foundation in mechanical design and industrial operations, I am dedicated to upskilling in modern engineering tools and preparing for future challenges in the industry.</p>
-        </div>
-
-        <div class="skills-container">
-            <div class="skill-box">
-                <div class="skill-info"><span>AutoCAD</span><span>85%</span></div>
-                <div class="skill-bar"><div class="skill-per" style="width: 85%;"></div></div>
-            </div>
-            <div class="skill-box">
-                <div class="skill-info"><span>SAP</span><span>75%</span></div>
-                <div class="skill-bar"><div class="skill-per" style="width: 75%;"></div></div>
-            </div>
-            <div class="skill-box">
-                <div class="skill-info"><span>Power BI</span><span>80%</span></div>
-                <div class="skill-bar"><div class="skill-per" style="width: 80%;"></div></div>
-            </div>
-            <div class="skill-box">
-                <div class="skill-info"><span>MS Office</span><span>90%</span></div>
-                <div class="skill-bar"><div class="skill-per" style="width: 90%;"></div></div>
-            </div>
-        </div>
-    </section>
-
-</body>
-</html>
+            <p>I am a Mechanical Engineer working as a Graduate Engineer Trainee at Adani Infra India Limited. I specialize in pre-project activities for cement grinding units, focusing on mechanical design and project coordination.</p>
+            <p>I completed an 8-month apprenticeship at Sumitomo Chemical India Ltd, gaining hands-on experience in
