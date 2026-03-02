@@ -66,7 +66,7 @@
             align-items: center;
             justify-content: center;
             padding: 120px 8% 50px;
-            background-color: #000000; /* Reference image jaisa pure black */
+            background-color: #000000; /* Pure black */
         }
 
         .hero-container {
@@ -100,7 +100,7 @@
             position: relative;
         }
 
-        /* Soft yellow halo/glow light effect (reference image se inspired) */
+        /* Reference image halo effect */
         .hero-img::after {
             content: '';
             position: absolute;
@@ -115,10 +115,10 @@
 
         .hero-img img {
             width: auto;
-            max-height: 80vh; /* Image height ko fix karne ke liye */
+            max-height: 80vh; /* Image height logic */
             max-width: 100%;
             z-index: 2;
-            filter: drop-shadow(0 0 30px rgba(249, 178, 51, 0.1)); /* Soft edges halo effect */
+            filter: drop-shadow(0 0 30px rgba(249, 178, 51, 0.1)); /* Soft halo */
         }
 
         /* --- ABOUT SECTION --- */
@@ -140,7 +140,7 @@
         .skill-bar { height: 4px; background: #1a1a1a; border-radius: 10px; position: relative; overflow: hidden; }
         .skill-per { height: 100%; background: var(--primary); border-radius: 10px; position: absolute; left: 0; top: 0; }
 
-        /* --- MOBILE RESPONSIVENESS (Reference image jaisa stacked layout) --- */
+        /* --- MOBILE RESPONSIVENESS (Reference image exact fit) --- */
         @media(max-width: 992px) {
             nav { padding: 15px 5%; }
             .nav-links { display: none; } /* Original menu hide */
@@ -148,7 +148,7 @@
             
             .hero { padding: 100px 5% 50px; }
             .hero-container { 
-                flex-direction: column; /* Stack vertically */
+                flex-direction: column; /* Stack */
                 text-align: center; 
             }
 
@@ -160,7 +160,7 @@
             }
 
             .hero-img img { 
-                max-width: 280px; /* Mobile par image size compact */
+                max-width: 280px; /* Mobile photo compact size */
                 max-height: auto;
             }
 
@@ -228,4 +228,33 @@
         <div class="about-info">
             <h2>About <span>Me</span></h2>
             <p>I am a Mechanical Engineer working as a Graduate Engineer Trainee at Adani Infra India Limited. I specialize in pre-project activities for cement grinding units, focusing on mechanical design and project coordination.</p>
-            <p>I completed an 8-month apprenticeship at Sumitomo Chemical India Ltd, gaining hands-on experience in
+            <p>I completed an 8-month apprenticeship at Sumitomo Chemical India Ltd, gaining hands-on experience in mechanical maintenance. Currently preparing for GATE 2027 to further my education and expertise.</p>
+        </div>
+
+        <div class="skills-container">
+            <div class="skill-box">
+                <div class="skill-info"><span>AutoCAD</span><span>85%</span></div>
+                <div class="skill-bar"><div class="skill-per" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-info"><span>SAP</span><span>75%</span></div>
+                <div class="skill-bar"><div class="skill-per" style="width: 75%;"></div></div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-info"><span>Power BI</span><span>80%</span></div>
+                <div class="skill-bar"><div class="skill-per" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill-box">
+                <div class="skill-info"><span>MS Office</span><span>90%</span></div>
+                <div class="skill-bar"><div class="skill-per" style="width: 90%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
